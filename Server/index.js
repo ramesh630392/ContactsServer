@@ -1,5 +1,6 @@
 import express, { request, response } from 'express';
 import dotenv from 'dotenv';
+import serverless from 'serverless-http';
 
 
 const app = express();
@@ -14,3 +15,5 @@ app.get('/', (request, response)=>{
 app.listen(3000, ()=>{
     console.log("server Running at port 3000");
 });
+
+export default serverless(app);
